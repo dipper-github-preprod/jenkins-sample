@@ -4,7 +4,7 @@ phases:
     commands:
       - echo "building"
       - echo "Linux-application" > app
-      - echo "version: 0.0 \nos: linux \nfiles: \n\t- source: / \n\t\tdestination: /home/ec2-user/deployment-dir" > appspec.yml
+      - echo '''version: 0.0 \nos: linux \nfiles: \n\t- source: / \n\t\tdestination: /home/ec2-user/deployment-dir''' > appspec.yml
 
 artifacts:
   type: zip

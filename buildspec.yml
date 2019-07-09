@@ -1,0 +1,13 @@
+version: 0.2
+phases:
+  build:
+    commands:
+      - date=`date`
+      - buildArn=`$CODEBUILD_BUILD_ARN
+      - echo "<html><head><title>Website Home Page</title></head><body><h1>Amazon S3 static website. Last built $date by $buildArn</h1></body></html>" > index.html
+
+
+artifacts:
+  type: zip
+  files:
+    - 'index.html'

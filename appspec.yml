@@ -4,3 +4,7 @@ files:
   - source: /
     destination: /home/ec2-user/deployment-dir
     overwrite: yes
+    
+hooks:
+  BeforeInstall:
+    - location: wipeApplication.sh

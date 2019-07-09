@@ -3,12 +3,11 @@ phases:
   build:
     commands:
       - echo "building"
-      - timestamp=`date`
-      - buildArn=`echo $CODEBUILD_BUILD_ARN`
-      - echo "<html><head><title>Website Home Page</title></head><body><h1>Amazon S3 static website. Last built $timestamp by $buildArn</h1></body></html>" > index.html
-
+      - echo "Linux-application" > app
+      - echo "version: 0.0 \nos: linux \nfiles: \n\t- source: / \n\t\tdestination: /home/ec2-user/deployment-dir" > appspec.yml
 
 artifacts:
   type: zip
   files:
-    - 'index.html'
+    - app
+    - appspec.yml

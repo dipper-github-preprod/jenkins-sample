@@ -3,7 +3,7 @@ phases:
   build:
     commands:
       - timestamp=`date`
-      - buildArn=`$CODEBUILD_BUILD_ARN
+      - buildArn=`$CODEBUILD_BUILD_ARN`
       - echo "<html><head><title>Website Home Page</title></head><body><h1>Amazon S3 static website. Last built $timestamp by $buildArn</h1></body></html>" > index.html
 
 
